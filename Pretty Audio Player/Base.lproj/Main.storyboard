@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,115 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pretty_Audio_Player" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPf-NZ-MVP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6fp-l2-KLa"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Pretty Audio Player" id="c3c-Wc-1PX"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVl-Uw-eAV">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZwJ-xj-Vpb"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="pause" image="pause.fill" catalog="system" id="Nt3-75-9FS">
+                                        <connections>
+                                            <action selector="pause:" destination="BYZ-38-t0r" id="twM-ZE-DW2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ULV-Nz-5Za"/>
+                                    <barButtonItem title="play" image="play.fill" catalog="system" id="ER3-jb-bso">
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" id="4yw-ZL-qD0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="991-ZH-WWZ"/>
+                                    <barButtonItem title="Stop" image="stop.fill" catalog="system" id="acy-DY-us1">
+                                        <connections>
+                                            <action selector="stop:" destination="BYZ-38-t0r" id="K1j-ap-NdU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Für Elise - Beethoven" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14r-yY-sNb">
+                                <rect key="frame" x="16" y="44" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4e5-ef-kwK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fur-elise-sheet.png" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-cC-RmK">
+                                <rect key="frame" x="-112.5" y="96" width="600" height="380"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="speaker.slash" catalog="system" maximumValueImage="speaker.3" translatesAutoresizingMaskIntoConstraints="NO" id="lch-25-7Ij">
+                                <rect key="frame" x="54.5" y="484" width="266" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MIY-51-VRU"/>
+                                    <constraint firstAttribute="width" constant="262" id="nIf-d2-GB9"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="volumeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="eGF-5P-Zlc"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kv2-jX-7Ic">
+                                <rect key="frame" x="54.5" y="541" width="266" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="8s6-qb-MiF"/>
+                                    <constraint firstAttribute="width" constant="262" id="FGF-Jk-4rx"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="progressSliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="m2M-7e-h1l"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kv2-jX-7Ic" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7lL-Vn-gBg"/>
+                            <constraint firstItem="eVl-Uw-eAV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AyJ-8N-Zbe"/>
+                            <constraint firstItem="XeK-cC-RmK" firstAttribute="top" secondItem="14r-yY-sNb" secondAttribute="bottom" constant="8" id="EN0-PI-adM"/>
+                            <constraint firstItem="kv2-jX-7Ic" firstAttribute="top" secondItem="lch-25-7Ij" secondAttribute="bottom" constant="27" id="Iad-af-SOX"/>
+                            <constraint firstItem="eVl-Uw-eAV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jxq-bK-jcf"/>
+                            <constraint firstItem="eVl-Uw-eAV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Kes-tN-yCu"/>
+                            <constraint firstItem="XeK-cC-RmK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MsK-1r-wZv"/>
+                            <constraint firstItem="14r-yY-sNb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Mwu-0O-Szh"/>
+                            <constraint firstItem="DPf-NZ-MVP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TSx-v6-0ZT"/>
+                            <constraint firstItem="DPf-NZ-MVP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="W5m-8N-V6Y"/>
+                            <constraint firstItem="lch-25-7Ij" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a0B-rn-MxB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="14r-yY-sNb" secondAttribute="trailing" constant="16" id="d2C-sC-C72"/>
+                            <constraint firstItem="lch-25-7Ij" firstAttribute="top" secondItem="XeK-cC-RmK" secondAttribute="bottom" constant="8" id="dHj-LU-Bju"/>
+                            <constraint firstItem="DPf-NZ-MVP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gFe-RD-Fh3"/>
+                            <constraint firstItem="14r-yY-sNb" firstAttribute="top" secondItem="DPf-NZ-MVP" secondAttribute="bottom" symbolic="YES" id="i86-Kx-P0Z"/>
+                            <constraint firstItem="eVl-Uw-eAV" firstAttribute="top" secondItem="XeK-cC-RmK" secondAttribute="bottom" constant="147" id="jPD-6p-eQY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="progressSlider" destination="kv2-jX-7Ic" id="RSR-6a-HDd"/>
+                        <outlet property="volumeSlider" destination="lch-25-7Ij" id="euV-YR-LKm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="122.40000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fur-elise-sheet.png" width="600" height="844"/>
+        <image name="pause.fill" catalog="system" width="58" height="64"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
+        <image name="speaker.3" catalog="system" width="64" height="44"/>
+        <image name="speaker.slash" catalog="system" width="64" height="62"/>
+        <image name="stop.fill" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

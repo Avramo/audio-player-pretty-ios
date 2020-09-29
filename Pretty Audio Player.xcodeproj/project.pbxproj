@@ -15,6 +15,8 @@
 		84A97B8D23F2FA8700727ED2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A97B8B23F2FA8700727ED2 /* LaunchScreen.storyboard */; };
 		84A97B9823F2FA8700727ED2 /* Pretty_Audio_PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A97B9723F2FA8700727ED2 /* Pretty_Audio_PlayerTests.swift */; };
 		84A97BA323F2FA8700727ED2 /* Pretty_Audio_PlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A97BA223F2FA8700727ED2 /* Pretty_Audio_PlayerUITests.swift */; };
+		84A97BB123F2FA9C00727ED2 /* fur-elise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84A97BB023F2FA9C00727ED2 /* fur-elise.mp3 */; };
+		84A97BB323F2FDE100727ED2 /* fur-elise-sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A97BB223F2FDE100727ED2 /* fur-elise-sheet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		84A97B9E23F2FA8700727ED2 /* Pretty Audio PlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pretty Audio PlayerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A97BA223F2FA8700727ED2 /* Pretty_Audio_PlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pretty_Audio_PlayerUITests.swift; sourceTree = "<group>"; };
 		84A97BA423F2FA8700727ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A97BB023F2FA9C00727ED2 /* fur-elise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "fur-elise.mp3"; sourceTree = "<group>"; };
+		84A97BB223F2FDE100727ED2 /* fur-elise-sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fur-elise-sheet.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				84A97B8023F2FA8600727ED2 /* AppDelegate.swift */,
 				84A97B8223F2FA8600727ED2 /* SceneDelegate.swift */,
 				84A97B8423F2FA8600727ED2 /* ViewController.swift */,
+				84A97BB023F2FA9C00727ED2 /* fur-elise.mp3 */,
+				84A97BB223F2FDE100727ED2 /* fur-elise-sheet.png */,
 				84A97B8623F2FA8600727ED2 /* Main.storyboard */,
 				84A97B8923F2FA8700727ED2 /* Assets.xcassets */,
 				84A97B8B23F2FA8700727ED2 /* LaunchScreen.storyboard */,
@@ -233,8 +239,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A97B8D23F2FA8700727ED2 /* LaunchScreen.storyboard in Resources */,
+				84A97BB323F2FDE100727ED2 /* fur-elise-sheet.png in Resources */,
 				84A97B8A23F2FA8700727ED2 /* Assets.xcassets in Resources */,
 				84A97B8823F2FA8600727ED2 /* Main.storyboard in Resources */,
+				84A97BB123F2FA9C00727ED2 /* fur-elise.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
